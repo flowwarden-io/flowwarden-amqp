@@ -221,10 +221,21 @@ Pick the error policy that matches your operational priorities (Mongo-first / AM
 | LavinMQ | 2.x+ (tested ad-hoc, not in CI) |
 | Apache Qpid | 8.x+ (tested ad-hoc, not in CI) |
 
+## FlowWarden Ecosystem
+
+| Component | Description | License |
+|-----------|-------------|---------|
+| **[flowwarden-stream-core](https://github.com/flowwarden-io/flowwarden-stream-core)** | Declarative MongoDB Change Streams library for Spring Boot | Apache 2.0 |
+| **[flowwarden-javers](https://github.com/flowwarden-io/flowwarden-javers)** | Native Javers audit stream integration | Apache 2.0 |
+| **[flowwarden-redis](https://github.com/flowwarden-io/flowwarden-redis)** | Redis-backed `LockService` and `CheckpointStore` backends | Apache 2.0 |
+| **[flowwarden-amqp](https://github.com/flowwarden-io/flowwarden-amqp)** | AMQP (RabbitMQ) publish-only dead-letter queue store | Apache 2.0 |
+| **flowwarden-rabbit-streams** | RabbitMQ Streams-backed dead-letter queue store | Apache 2.0 |
+| **flowwarden-reporter** | Connects your streams to FlowWarden Console for monitoring | Apache 2.0 |
+| **FlowWarden Console** | Dashboard for monitoring, alerting, and managing Change Streams | Commercial |
+
 ## Documentation
 
-- [FlowWarden documentation](https://docs.flowwarden.io)
-- [Stream Core SPIs](https://github.com/flowwarden-io/flowwarden-stream-core)
+Full documentation is available at **[docs.flowwarden.io](https://docs.flowwarden.io)** — start with the [AMQP backend guide](https://docs.flowwarden.io/amqp).
 
 ## Contributing
 
