@@ -60,7 +60,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <flowwarden-stream-core.version>1.0.0-rc.3-SNAPSHOT</flowwarden-stream-core.version>
+        <flowwarden-stream-core.version>1.0.0-rc.3</flowwarden-stream-core.version>
         <testcontainers.version>1.21.4</testcontainers.version>
         <license.year>2026</license.year>
     </properties>
@@ -266,7 +266,7 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.7.0</version>
+                        <version>0.11.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>

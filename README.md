@@ -4,7 +4,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Java 17+](https://img.shields.io/badge/Java-17%2B-orange.svg)](https://openjdk.org/)
 [![Spring Boot 3.x](https://img.shields.io/badge/Spring%20Boot-3.x-green.svg)](https://spring.io/projects/spring-boot)
-<!-- [![Maven Central](https://img.shields.io/maven-central/v/io.flowwarden/flowwarden-amqp.svg)](https://central.sonatype.com/artifact/io.flowwarden/flowwarden-amqp) -->
+[![Maven Central](https://img.shields.io/maven-central/v/io.flowwarden/flowwarden-amqp.svg)](https://central.sonatype.com/artifact/io.flowwarden/flowwarden-amqp)
 
 AMQP-backed `DlqStore` implementation for [FlowWarden Stream Core](https://github.com/flowwarden-io/flowwarden-stream-core).
 
