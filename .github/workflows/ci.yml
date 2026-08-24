@@ -29,7 +29,14 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: temurin
           cache: maven
+          # Read access to stream-core SNAPSHOTs on GitHub Packages (Maven
+          # requires authentication even for public packages).
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
       - name: Build & Test
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: ./mvnw -B clean verify
       - name: Upload test reports
         if: failure()

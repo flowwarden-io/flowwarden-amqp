@@ -27,20 +27,21 @@ import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * AMQP 0.9.1 publish-only {@link DlqStore} implementation.
  *
  * <p>Publishes failed events to a topic exchange via Spring AMQP
- * {@link RabbitTemplate}. Read operations ({@code findById},
- * {@code findByStreamName}) return empty values and log a one-shot warning
- * pointing users to the AMQP consumer pattern.</p>
+ * {@link RabbitTemplate}. The cold-path reads ({@code findById},
+ * {@code findByStreamName}) and {@code count} are inherited from the SPI
+ * defaults — honest empties and {@code -1} ("cannot count"): a published
+ * message consumed downstream is gone, so this backend never fakes reads
+ * and the core never emits a lying backlog gauge for it. Subscribe an AMQP
+ * consumer to the configured exchange for downstream processing of failed
+ * events (see the README).</p>
  *
  * <p>Behavior is documented in detail in the satellite's README and ADR. Key
  * points:</p>
@@ -73,8 +74,6 @@ public class AmqpDlqStore implements DlqStore {
     private final boolean confirmModeEffective;
 
     private final ConcurrentMap<String, AmqpDlqOptions> overrides = new ConcurrentHashMap<>();
-    private final AtomicBoolean findByIdWarned = new AtomicBoolean(false);
-    private final AtomicBoolean findByStreamNameWarned = new AtomicBoolean(false);
 
     public AmqpDlqStore(RabbitTemplate template,
                         AmqpDlqProperties properties,
@@ -160,25 +159,6 @@ public class AmqpDlqStore implements DlqStore {
         return new Message(body.getBytes(StandardCharsets.UTF_8), props);
     }
 
-    @Override
-    public Optional<FailedEvent> findById(String id) {
-        if (findByIdWarned.compareAndSet(false, true)) {
-            log.warn("flowwarden-amqp: DlqStore.findById is not supported by this backend (publish-only). "
-                    + "Subscribe an AMQP consumer to exchange '{}' (routing key pattern '{}*') "
-                    + "for downstream processing of failed events.",
-                    properties.getExchange(), properties.getRoutingKeyPrefix());
-        }
-        return Optional.empty();
-    }
-
-    @Override
-    public List<FailedEvent> findByStreamName(String streamName) {
-        if (findByStreamNameWarned.compareAndSet(false, true)) {
-            log.warn("flowwarden-amqp: DlqStore.findByStreamName is not supported by this backend (publish-only). "
-                    + "Subscribe an AMQP consumer to exchange '{}' (routing key pattern '{}*') "
-                    + "for downstream processing of failed events.",
-                    properties.getExchange(), properties.getRoutingKeyPrefix());
-        }
-        return List.of();
-    }
+    // findById / findByStreamName / count deliberately NOT overridden: the
+    // SPI defaults (empty, empty, -1) are the honest publish-only answers.
 }
