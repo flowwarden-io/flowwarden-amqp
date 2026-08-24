@@ -8,10 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- The published `DlqStoreContractTest` is now adopted: the stream-core 1.0.0-rc.4 testkit made the read/count contracts opt-in capabilities, so the write contract finally fits a publish-only backend (read/count tests report as skipped assumptions by design).
 
 ### Changed
+- `flowwarden-stream-core` baseline: 1.0.0-rc.4.
 
 ### Removed
+- The fake read implementations (`findById`/`findByStreamName` returning empty with a one-shot WARN) are gone: since stream-core 1.0.0-rc.4 the SPI reads are `default` (empty) and `count` defaults to `-1` ("cannot count"), so this publish-only backend is honest by construction — no warning needed, and the core never emits a lying backlog gauge for it. Point an AMQP consumer at the configured exchange for downstream processing (see README).
 
 ### Fixed
 
