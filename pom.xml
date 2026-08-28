@@ -13,7 +13,7 @@
 
     <groupId>io.flowwarden</groupId>
     <artifactId>flowwarden-amqp</artifactId>
-    <version>1.0.0-rc.2</version>
+    <version>1.0.0-rc.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>FlowWarden AMQP</name>
