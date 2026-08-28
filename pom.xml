@@ -13,7 +13,7 @@
 
     <groupId>io.flowwarden</groupId>
     <artifactId>flowwarden-amqp</artifactId>
-    <version>1.0.0-rc.2-SNAPSHOT</version>
+    <version>1.0.0-rc.2</version>
     <packaging>jar</packaging>
 
     <name>FlowWarden AMQP</name>
@@ -60,7 +60,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <flowwarden-stream-core.version>1.0.0-rc.4-SNAPSHOT</flowwarden-stream-core.version>
+        <flowwarden-stream-core.version>1.0.0-rc.4</flowwarden-stream-core.version>
         <testcontainers.version>1.21.4</testcontainers.version>
         <license.year>2026</license.year>
     </properties>

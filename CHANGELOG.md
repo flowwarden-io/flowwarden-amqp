@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Removed
+
+### Fixed
+
+### Deprecated
+
+### Security
+
+## [1.0.0-rc.2] — 2026-08-28
+
+### Added
 - The published `DlqStoreContractTest` is now adopted: the stream-core 1.0.0-rc.4 testkit made the read/count contracts opt-in capabilities, so the write contract finally fits a publish-only backend (read/count tests report as skipped assumptions by design).
 
 ### Changed
@@ -43,5 +57,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-[Unreleased]: https://github.com/flowwarden-io/flowwarden-amqp/compare/v1.0.0-rc.1...HEAD
+[Unreleased]: https://github.com/flowwarden-io/flowwarden-amqp/compare/v1.0.0-rc.2...HEAD
+[1.0.0-rc.2]: https://github.com/flowwarden-io/flowwarden-amqp/releases/tag/v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/flowwarden-io/flowwarden-amqp/releases/tag/v1.0.0-rc.1
