@@ -27,7 +27,7 @@ What this is **not**:
 <dependency>
     <groupId>io.flowwarden</groupId>
     <artifactId>flowwarden-amqp</artifactId>
-    <version>1.0.0-rc.1</version>
+    <version>1.0.0-rc.2</version>
 </dependency>
 ```
 
@@ -39,7 +39,7 @@ What this is **not**:
         <dependency>
             <groupId>io.flowwarden</groupId>
             <artifactId>flowwarden-bom</artifactId>
-            <version>1.0.0-rc.3</version>
+            <version>1.0.0-rc.4</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -117,7 +117,7 @@ public class PaymentsHandler {
 }
 ```
 
-Defaults (empty string / `false`) fall back to the global config under `flowwarden.amqp.*`. The annotation is scanned at `ApplicationReadyEvent`; beans defined later (via the builder API) are not yet supported in rc.1.
+Defaults (empty string / `false`) fall back to the global config under `flowwarden.amqp.*`. The annotation is scanned at `ApplicationReadyEvent`; beans defined later (via the builder API) are not yet supported in the rc line.
 
 ### About `mandatory`
 
@@ -216,7 +216,7 @@ Pick the error policy that matches your operational priorities (Mongo-first / AM
 | Java | 17+ |
 | Spring Boot | 3.x |
 | Spring AMQP | 3.x (transitively) |
-| `flowwarden-stream-core` | 1.0.0-rc.3+ |
+| `flowwarden-stream-core` | 1.0.0-rc.4+ |
 | RabbitMQ (reference) | 3.8+ |
 | LavinMQ | 2.x+ (tested ad-hoc, not in CI) |
 | Apache Qpid | 8.x+ (tested ad-hoc, not in CI) |
