@@ -39,7 +39,7 @@ What this is **not**:
         <dependency>
             <groupId>io.flowwarden</groupId>
             <artifactId>flowwarden-bom</artifactId>
-            <version>1.0.0-rc.4</version>
+            <version>1.0.0-rc.7</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -216,7 +216,7 @@ Pick the error policy that matches your operational priorities (Mongo-first / AM
 | Java | 17+ |
 | Spring Boot | 3.x |
 | Spring AMQP | 3.x (transitively) |
-| `flowwarden-stream-core` | 1.0.0-rc.4+ |
+| `flowwarden-stream-core` | 1.0.0-rc.7+ |
 | RabbitMQ (reference) | 3.8+ |
 | LavinMQ | 2.x+ (tested ad-hoc, not in CI) |
 | Apache Qpid | 8.x+ (tested ad-hoc, not in CI) |

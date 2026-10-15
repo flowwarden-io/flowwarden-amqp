@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- `flowwarden-stream-core` baseline: 1.0.0-rc.7 (from rc.4). The `DlqStore` SPI is unchanged; no code change. Inherited at runtime for streams backed by this module: the managed restart loop is now tunable per stream (`@RestartPolicy`) and a hung cursor is detected and restarted (`@Checkpoint(stuckAfterProbes)`).
 
 ### Removed
 
