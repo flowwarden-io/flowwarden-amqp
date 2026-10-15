@@ -5,11 +5,12 @@ updates:
     schedule:
       interval: "weekly"
     ignore:
-      # The module is guaranteed on the Spring Boot line of the applications it
-      # runs in (3.2.x, aligned with flowwarden-stream-core). A Boot major is a
-      # deliberate release decision for the whole ecosystem, never a bump.
+      # The module is pinned to the Spring Boot 3.2.x line of the applications
+      # it runs in (aligned with flowwarden-stream-core): the parent pom is the
+      # compile baseline it is guaranteed against, so a Boot minor is as
+      # deliberate a decision as a major — patches only.
       - dependency-name: "org.springframework.boot:*"
-        update-types: ["version-update:semver-major"]
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
       # Testcontainers 2.x changes the API the test harness and the stream-core
       # testkit are written against; the move is a deliberate migration.
       - dependency-name: "org.testcontainers:*"
