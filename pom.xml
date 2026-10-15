@@ -13,7 +13,7 @@
 
     <groupId>io.flowwarden</groupId>
     <artifactId>flowwarden-amqp</artifactId>
-    <version>1.0.0-rc.3</version>
+    <version>1.0.0-rc.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>FlowWarden AMQP</name>
@@ -294,7 +294,10 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.11.0</version>
+                        <!-- 0.12.0 strips the maven-metadata-local.xml / _remote.repositories
+                             files Maven 3.10 leaves in the staging directory (Central rejects
+                             a bundle that contains them). -->
+                        <version>0.12.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
