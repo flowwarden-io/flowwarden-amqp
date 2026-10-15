@@ -27,7 +27,7 @@ What this is **not**:
 <dependency>
     <groupId>io.flowwarden</groupId>
     <artifactId>flowwarden-amqp</artifactId>
-    <version>1.0.0-rc.2</version>
+    <version>1.0.0-rc.3</version>
 </dependency>
 ```
 
