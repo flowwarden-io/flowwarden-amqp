@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc.3] — 2026-10-15
+
 ### Added
 
 ### Changed
@@ -58,6 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-[Unreleased]: https://github.com/flowwarden-io/flowwarden-amqp/compare/v1.0.0-rc.2...HEAD
+[Unreleased]: https://github.com/flowwarden-io/flowwarden-amqp/compare/v1.0.0-rc.3...HEAD
+[1.0.0-rc.3]: https://github.com/flowwarden-io/flowwarden-amqp/releases/tag/v1.0.0-rc.3
 [1.0.0-rc.2]: https://github.com/flowwarden-io/flowwarden-amqp/releases/tag/v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/flowwarden-io/flowwarden-amqp/releases/tag/v1.0.0-rc.1
