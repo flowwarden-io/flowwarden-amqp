@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- `flowwarden-stream-core` baseline: 1.0.0-rc.8 (from rc.7). No code change. The `DlqStore` SPI gained a `default` (no-op) startup hook, `onStreamRegistered(DlqStreamRegistration)`, called once per DLQ-enabled stream before it starts; `AmqpDlqStore` keeps the default — its per-stream routing comes from `@AmqpDlqOptions` — and the testkit's new contract case for the hook passes as is. An application that wraps `AmqpDlqStore` together with the Mongo store in a composite should forward the hook to the Mongo delegate.
+
 ## [1.0.0-rc.3] — 2026-10-15
 
 ### Added
